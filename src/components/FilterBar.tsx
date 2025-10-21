@@ -1,6 +1,5 @@
 import { Calendar, MapPin, Package, Target, Filter, ChevronDown } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
-import { createPortal } from 'react-dom';
 import { useFilters } from '../context/FilterContext';
 import './FilterBar.css';
 
@@ -20,46 +19,17 @@ const FilterBar = () => {
   
   const [dateDropdownOpen, setDateDropdownOpen] = useState(false);
   const [countryDropdownOpen, setCountryDropdownOpen] = useState(false);
-  const [dateDropdownPos, setDateDropdownPos] = useState({ top: 0, left: 0, width: 0 });
-  const [countryDropdownPos, setCountryDropdownPos] = useState({ top: 0, left: 0, width: 0 });
   
   const dateDropdownRef = useRef<HTMLDivElement>(null);
   const countryDropdownRef = useRef<HTMLDivElement>(null);
-  const dateTriggerRef = useRef<HTMLButtonElement>(null);
-  const countryTriggerRef = useRef<HTMLButtonElement>(null);
-
-  // Update dropdown positions
-  useEffect(() => {
-    if (dateDropdownOpen && dateTriggerRef.current) {
-      const rect = dateTriggerRef.current.getBoundingClientRect();
-      setDateDropdownPos({
-        top: rect.bottom + 4,
-        left: rect.left,
-        width: rect.width
-      });
-    }
-  }, [dateDropdownOpen]);
-
-  useEffect(() => {
-    if (countryDropdownOpen && countryTriggerRef.current) {
-      const rect = countryTriggerRef.current.getBoundingClientRect();
-      setCountryDropdownPos({
-        top: rect.bottom + 4,
-        left: rect.left,
-        width: rect.width
-      });
-    }
-  }, [countryDropdownOpen]);
 
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dateDropdownRef.current && !dateDropdownRef.current.contains(event.target as Node) &&
-          dateTriggerRef.current && !dateTriggerRef.current.contains(event.target as Node)) {
+      if (dateDropdownRef.current && !dateDropdownRef.current.contains(event.target as Node)) {
         setDateDropdownOpen(false);
       }
-      if (countryDropdownRef.current && !countryDropdownRef.current.contains(event.target as Node) &&
-          countryTriggerRef.current && !countryTriggerRef.current.contains(event.target as Node)) {
+      if (countryDropdownRef.current && !countryDropdownRef.current.contains(event.target as Node)) {
         setCountryDropdownOpen(false);
       }
     };

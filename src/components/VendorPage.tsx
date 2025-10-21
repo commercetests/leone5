@@ -1,4 +1,4 @@
-import { Package, TrendingUp, AlertCircle, CheckCircle, Truck, DollarSign, Box } from 'lucide-react';
+import { Package, AlertCircle, CheckCircle, Truck, DollarSign, Box } from 'lucide-react';
 import { AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import ChartInfoTooltip from './ChartInfoTooltip';
 import VendorFilterBar from './VendorFilterBar';

@@ -1,5 +1,5 @@
-import { Target, TrendingUp, Eye, MousePointer, DollarSign, Zap } from 'lucide-react';
-import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
+import { DollarSign, TrendingUp, Target, Zap, Eye } from 'lucide-react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import ChartInfoTooltip from './ChartInfoTooltip';
 import AdsFilterBar from './AdsFilterBar';
 import './AdvertisingPage.css';

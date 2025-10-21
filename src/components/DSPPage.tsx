@@ -1,4 +1,4 @@
-import { Tv, Users, TrendingUp, Target, Eye, MousePointer } from 'lucide-react';
+import { Eye, Target, TrendingUp, Users, Tv } from 'lucide-react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import ChartInfoTooltip from './ChartInfoTooltip';
 import DSPFilterBar from './DSPFilterBar';
